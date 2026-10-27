@@ -1,0 +1,54 @@
+<!DOCTYPE html> <!-- บอกเบราว์เซอร์ว่าเป็นเอกสาร HTML5 -->
+<html lang="th"> <!-- หน้านี้เป็นภาษาไทย -->
+<head>
+  <meta charset="UTF-8"> <!-- รองรับตัวอักษรไทย -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- ให้แสดงผลพอดีบนมือถือ -->
+  <title>วิทยาลัยเทคนิคนางรอง</title> <!-- ข้อความบนแท็บเบราว์เซอร์ -->
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet"> <!-- โหลดฟอนต์ Sarabun -->
+  <link rel="stylesheet" href="style.css"> <!-- เรียกไฟล์ตกแต่ง style.css -->
+</head>
+<body>
+
+  <!-- แถบเมนูบนสุด: คลิกชื่อวิทยาลัยเพื่อกลับหน้าแรก -->
+  <header class="topbar">
+    <a class="brand" href="index.html">🏫 วิทยาลัยเทคนิคนางรอง</a>
+    <nav>
+      <a class="active" href="index.html">หน้าแรก</a> <!-- class active = ไฮไลต์หน้าปัจจุบัน -->
+      <a href="about.html">ข้อมูลวิทยาลัย</a>
+      <a href="map.html">แผนที่</a>
+      <a href="contact.html">ติดต่อ</a>
+    </nav>
+  </header>
+
+  <!-- ส่วนหัวใหญ่ของหน้าแรก -->
+  <section class="hero">
+    <div class="logo-box">
+      <!-- ▼▼ ใส่โลโก้: วางไฟล์ไว้ที่ images/logo.png ▼▼ -->
+      <img src="images/images 4.jpg" alt="โลโก้วิทยาลัย" onerror="this.style.display='none'"> <!-- onerror = ถ้าไม่มีรูปให้ซ่อน ไม่แสดงรูปแตก -->
+    </div>
+    <h1>วิทยาลัยเทคนิคนางรอง</h1>
+    <p>Nang Rong Technical College — สร้างคนดี มีฝีมือ พร้อมสู่โลกอาชีพ</p> <!-- แก้คำขวัญให้ตรงของจริงได้ -->
+  </section>
+
+  <!-- ปุ่มเมนู 3 ปุ่ม: แต่ละปุ่มคือลิงก์ <a> ไปยังหน้าของตัวเอง -->
+  <section class="menu">
+    <a href="about.html">
+      <div class="icon">📘</div>
+      <h3>รายละเอียดวิทยาลัย</h3>
+      <small>ประวัติ วิสัยทัศน์ แผนกวิชา</small>
+    </a>
+    <a href="map.html">
+      <div class="icon">🗺️</div>
+      <h3>แผนที่และการเดินทาง</h3>
+      <small>แผนที่ นำทางด้วย Google Maps</small>
+    </a>
+    <a href="contact.html">
+      <div class="icon">📞</div>
+      <h3>ข้อมูลติดต่อ</h3>
+      <small>โทรศัพท์ อีเมล ที่อยู่ โซเชียล</small>
+    </a>
+  </section>
+
+  <footer>© 2026 วิทยาลัยเทคนิคนางรอง จ.บุรีรัมย์</footer> <!-- ส่วนท้ายเว็บ -->
+</body>
+</html>

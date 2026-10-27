@@ -1,0 +1,62 @@
+/* ===== style.css : ไฟล์ตกแต่งที่ใช้ร่วมกันทั้ง 4 หน้า ===== */
+
+/* กำหนดตัวแปรสี (เปลี่ยนที่นี่ที่เดียว สีเปลี่ยนทั้งเว็บ) */
+:root{
+  --navy:#0b2a5b;      /* สีน้ำเงินเข้ม สีหลัก */
+  --blue:#1f5fbf;      /* สีน้ำเงินสว่าง */
+  --gold:#f5a623;      /* สีทอง/ส้ม สีเน้น */
+  --bg:#f4f7fc;       /* สีพื้นหลังหน้าเว็บ */
+  --text:#1d2433;     /* สีตัวอักษร */
+}
+
+/* รีเซ็ตระยะขอบเริ่มต้นของเบราว์เซอร์ และให้ขนาดกล่องรวม padding */
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ตั้งค่าพื้นฐานทั้งหน้า: ฟอนต์ไทย Sarabun, สีพื้น, สีตัวอักษร */
+body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+
+/* แถบเมนูด้านบน: ติดบนสุดเมื่อเลื่อนหน้า */
+.topbar{position:sticky;top:0;z-index:10;background:var(--navy);display:flex;justify-content:space-between;align-items:center;padding:12px 6%;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.brand{color:#fff;font-weight:700;font-size:1.1rem;text-decoration:none}
+.topbar nav a{color:#dbe6ff;text-decoration:none;margin-left:18px;font-size:.95rem;transition:.2s}
+.topbar nav a:hover,.topbar nav a.active{color:var(--gold)}  /* เมนูหน้าปัจจุบัน/เมาส์ชี้ เป็นสีทอง */
+
+/* ส่วนหัวใหญ่ (Hero): พื้นหลังไล่สี */
+.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;text-align:center;padding:70px 6% 90px}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem);margin:12px 0}   /* clamp = ขนาดปรับตามหน้าจอ */
+.hero p{opacity:.9;max-width:650px;margin:0 auto}
+.logo-box{width:130px;height:130px;margin:0 auto;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:5px solid var(--gold);color:var(--navy);font-size:.8rem}
+.logo-box img{width:100%;height:100%;object-fit:cover}      /* รูปเต็มกรอบโดยไม่บิดสัดส่วน */
+
+/* กล่องปุ่มเมนู 3 ปุ่มหน้า index: ยกขึ้นทับ hero เล็กน้อย */
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1000px;margin:-50px auto 50px;padding:0 6%}
+.menu a{background:#fff;border-radius:18px;padding:34px 24px;text-align:center;text-decoration:none;color:var(--text);box-shadow:0 8px 24px rgba(11,42,91,.15);border-bottom:5px solid var(--gold);transition:.25s}
+.menu a:hover{transform:translateY(-8px);box-shadow:0 14px 30px rgba(11,42,91,.25)}  /* เมาส์ชี้แล้วลอยขึ้น */
+.menu .icon{font-size:2.8rem}
+.menu h3{color:var(--navy);margin:8px 0 4px}
+.menu small{color:#6b7488}
+
+/* เนื้อหาหน้าย่อย */
+.container{max-width:1000px;margin:40px auto;padding:0 6%}
+.container h2{color:var(--navy);margin:34px 0 14px;border-left:6px solid var(--gold);padding-left:12px}
+.card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(11,42,91,.1);margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.grid .card{margin:0}
+.card h3{color:var(--blue);margin-bottom:6px}
+
+/* กรอบใส่รูปภาพ (ถ้ายังไม่มีรูปจะเห็นพื้นหลังไล่สีพร้อมข้อความบอกตำแหน่ง) */
+.photo{width:100%;min-height:240px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#cfe0ff,#e9f0ff);display:flex;align-items:center;justify-content:center;color:#5b6b8c;margin-bottom:20px}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ปุ่มทั่วไป */
+.btn{display:inline-block;background:var(--gold);color:#222;padding:12px 26px;border-radius:30px;text-decoration:none;font-weight:700;transition:.2s}
+.btn:hover{background:#ffb94d}
+
+/* แผนที่: ทำให้สัดส่วนกว้างเต็มและสูง 420px */
+.map iframe{width:100%;height:420px;border:0;border-radius:16px}
+
+/* ส่วนท้ายเว็บ */
+footer{background:var(--navy);color:#b9c7e6;text-align:center;padding:22px;margin-top:50px;font-size:.9rem}
+
+/* หน้าจอเล็ก (มือถือ): ซ่อนข้อความเมนูบางส่วนให้พอดี */
+@media(max-width:600px){.topbar{flex-direction:column;gap:8px}.topbar nav a{margin:0 9px}}
